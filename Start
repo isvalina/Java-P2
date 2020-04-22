@@ -1,0 +1,96 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ffos.prijateljica;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author Ivana
+ */
+public class Start {
+
+    private List<Prijateljica> prijateljice;
+
+    public Start() {
+
+        JOptionPane.showMessageDialog(null, "Dobrodošli u program Prijateljice");
+        prijateljice = new ArrayList<>();
+        ucitajPrijateljice();
+        ispisiMarke();
+        ispisiBoolean();
+
+    }
+
+    public static void main(String[] args) {
+        new Start();
+    }
+
+    private void ucitajPrijateljice() {
+
+        String s;
+        while (true) {
+            ucitajPrijateljicu();
+            s = JOptionPane.showInputDialog("Unos slova x za prekid, svi drugi znakovi nastavljaju unos.");
+            if (s.toLowerCase().equals("x")) {
+                break;
+            }
+        }
+
+    }
+
+    private void ucitajPrijateljicu() {
+
+        JOptionPane.showMessageDialog(null, "Unos nove prijateljice");
+        Prijateljica prijateljica = new Prijateljica();
+        prijateljica.setSifra(Pomocno.ucitajString("Unesi šifru prijateljice."));
+        prijateljica.setNarukvica(Pomocno.ucitajBroj("Unesi broj narukvica na ruci."));
+        prijateljica.setNovcica(Pomocno.ucitajDecimalniBroj("Unesi broj kuna u lijevom džepu"));
+        prijateljica.setMaraka(Pomocno.ucitajDecimalniBroj("Unesi koliko ima maraka."));
+        prijateljica.setVesta(Pomocno.ucitajString("Unesi boju veste."));
+        prijateljica.setModelNaocala("Unesi model naočala.");
+
+        JOptionPane.showMessageDialog(null, "Slijedi unos podataka za neprijateljicu");
+
+        prijateljica.setNeprijateljica(ucitajNeprijateljicu());
+
+        prijateljice.add(prijateljica);
+
+    }
+
+    private Neprijateljica ucitajNeprijateljicu() {
+        Neprijateljica neprijateljica = new Neprijateljica();
+        neprijateljica.setSifra(Pomocno.ucitajBroj("Unesi šifru neprijateljice."));
+        neprijateljica.setIntrovertno(Pomocno.ucitajBoolean("Unesi true za DA, bilo što za NE."));
+        neprijateljica.setSuknja(Pomocno.ucitajString("Unesi kroj suknje."));
+        neprijateljica.setEura(Pomocno.ucitajDecimalniBroj("Unesi eure u novčaniku."));
+        neprijateljica.setMajica(Pomocno.ucitajString("Unesi boju majice."));
+        neprijateljica.setTreciPuta(Pomocno.ucitajDatum("Unesi datum u formatu 'dd.MM.yyyy'"));
+        return neprijateljica;
+
+    }
+
+    private void ispisiMarke() {
+        for (Prijateljica prijateljica : prijateljice) {
+            System.out.println("Prijateljica ima " + prijateljica.getMaraka() + " maraka.");
+        }
+    }
+
+    private void ispisiBoolean() {
+        // for (klasa, instanca klase : lista)
+
+        int s = 0;
+        for (Prijateljica prijateljica : prijateljice) {
+            if (prijateljica.neprijateljica.isIntrovertno() != false) {
+                s++;
+            }
+        }
+        System.out.println("Broj puta koliko je uneseno introvertno ili 'true' je " + s);
+    }
+
+}
