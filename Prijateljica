@@ -1,0 +1,80 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ffos.prijateljica;
+
+/**
+ *
+ * @author Ivana
+ */
+public class Prijateljica {
+ 
+    private String sifra;
+    private int narukvica;
+    private float novcica;
+    private float maraka;
+    private String vesta;
+    private String modelNaocala;
+    Neprijateljica neprijateljica;
+
+    public String getSifra() {
+        return sifra;
+    }
+
+    public void setSifra(String sifra) {
+        this.sifra = sifra;
+    }
+
+    public int getNarukvica() {
+        return narukvica;
+    }
+
+    public void setNarukvica(int narukvica) {
+        this.narukvica = narukvica;
+    }
+
+    public float getNovcica() {
+        return novcica;
+    }
+
+    public void setNovcica(float novcica) {
+        this.novcica = novcica;
+    }
+
+    public float getMaraka() {
+        return maraka;
+    }
+
+    public void setMaraka(float maraka) {
+        this.maraka = maraka;
+    }
+
+    public String getVesta() {
+        return vesta;
+    }
+
+    public void setVesta(String vesta) {
+        this.vesta = vesta;
+    }
+
+    public String getModelNaocala() {
+        return modelNaocala;
+    }
+
+    public void setModelNaocala(String modelNaocala) {
+        this.modelNaocala = modelNaocala;
+    }
+
+    public Neprijateljica getNeprijateljica() {
+        return neprijateljica;
+    }
+
+    public void setNeprijateljica(Neprijateljica neprijateljica) {
+        this.neprijateljica = neprijateljica;
+    }
+    
+    
+    
+}
