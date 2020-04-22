@@ -1,0 +1,73 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ffos.prijateljica;
+
+import java.util.Date;
+
+/**
+ *
+ * @author Ivana
+ */
+public class Neprijateljica {
+    
+    private int sifra;
+    private boolean introvertno;
+    private String suknja;
+    private float eura;
+    private String majica;
+    private Date treciPuta;
+
+    public int getSifra() {
+        return sifra;
+    }
+
+    public void setSifra(int sifra) {
+        this.sifra = sifra;
+    }
+
+    public boolean isIntrovertno() {
+        return introvertno;
+    }
+
+    public void setIntrovertno(boolean introvertno) {
+        this.introvertno = introvertno;
+    }
+
+    public String getSuknja() {
+        return suknja;
+    }
+
+    public void setSuknja(String suknja) {
+        this.suknja = suknja;
+    }
+
+    public float getEura() {
+        return eura;
+    }
+
+    public void setEura(float eura) {
+        this.eura = eura;
+    }
+
+    public String getMajica() {
+        return majica;
+    }
+
+    public void setMajica(String majica) {
+        this.majica = majica;
+    }
+
+    public Date getTreciPuta() {
+        return treciPuta;
+    }
+
+    public void setTreciPuta(Date treciPuta) {
+        this.treciPuta = treciPuta;
+    }
+    
+    
+    
+}
